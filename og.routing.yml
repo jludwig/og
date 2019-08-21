@@ -47,6 +47,7 @@ og.entity_autocomplete:
   defaults:
     _controller: '\Drupal\og\Controller\OgAutocompleteController:handleAutocomplete'
   requirements:
+    # @todo: This requires an access check.
     _access: 'TRUE'
   options:
     parameters:
