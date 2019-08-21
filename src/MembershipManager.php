@@ -127,24 +127,6 @@ class MembershipManager implements MembershipManagerInterface {
   /**
    * {@inheritdoc}
    */
-  public function getGroupMembershipCount(EntityInterface $group, array $states = [OgMembershipInterface::STATE_ACTIVE]) {
-    $query = $this->entityTypeManager
-      ->getStorage('og_membership')
-      ->getQuery()
-      ->condition('entity_id', $group->id());
-
-    if ($states) {
-      $query->condition('state', $states, 'IN');
-    }
-
-    $query->count();
-
-    return $query->execute();
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function getUserGroupIdsByRoleIds(AccountInterface $user, array $role_ids, array $states = [OgMembershipInterface::STATE_ACTIVE], bool $require_all_roles = TRUE): array {
     /** @var \Drupal\og\OgMembershipInterface[] $memberships */
     $memberships = $this->getMemberships($user, $states);
@@ -166,6 +148,24 @@ class MembershipManager implements MembershipManagerInterface {
   public function getUserGroupsByRoleIds(AccountInterface $user, array $role_ids, array $states = [OgMembershipInterface::STATE_ACTIVE], bool $require_all_roles = TRUE): array {
     $group_ids = $this->getUserGroupIdsByRoleIds($user, $role_ids, $states, $require_all_roles);
     return $this->loadGroups($group_ids);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getGroupMembershipCount(EntityInterface $group, array $states = [OgMembershipInterface::STATE_ACTIVE]) {
+    $query = $this->entityTypeManager
+      ->getStorage('og_membership')
+      ->getQuery()
+      ->condition('entity_id', $group->id());
+
+    if ($states) {
+      $query->condition('state', $states, 'IN');
+    }
+
+    $query->count();
+
+    return $query->execute();
   }
 
   /**
