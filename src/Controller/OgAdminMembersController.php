@@ -126,6 +126,7 @@ class OgAdminMembersController extends ControllerBase {
     $og_membership = OgMembership::create([
       'type' => $og_membership_type->id(),
       'entity_type' => $group->getEntityType()->id(),
+      'entity_bundle' => $group->bundle(),
       'entity_id' => $group->id(),
     ]);
 
