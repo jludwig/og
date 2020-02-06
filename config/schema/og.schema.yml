@@ -172,17 +172,6 @@ block.settings.og_member_count:
       type: boolean
       label: 'Count pending users'
 
-# Copied and adapted from core.entity.schema.yml
 field.widget.settings.og_autocomplete:
-  type: mapping
+  type: field.widget.settings.entity_reference_autocomplete
   label: 'OG context based entity reference autocomplete with display format settings'
-  mapping:
-    match_operator:
-      type: string
-      label: 'Autocomplete matching'
-    size:
-      type: integer
-      label: 'Size of textfield'
-    placeholder:
-      type: label
-      label: 'Placeholder'
