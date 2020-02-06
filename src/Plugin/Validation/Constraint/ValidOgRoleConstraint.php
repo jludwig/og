@@ -19,6 +19,6 @@ class ValidOgRoleConstraint extends Constraint {
    *
    * @var string
    */
-  public $NotValidRole = 'Invalid role selected.';
+  public $notValidRole = 'Invalid role selected.';
 
 }

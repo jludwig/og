@@ -31,7 +31,7 @@ class ValidOgRoleConstraintValidator extends ConstraintValidator {
 
     foreach ($value->referencedEntities() as $og_role) {
       if ($og_role->getGroupType() !== $group_type || $og_role->getGroupBundle() !== $group_bundle) {
-        $this->context->addViolation($constraint->NotValidRole);
+        $this->context->addViolation($constraint->notValidRole);
       }
     }
 

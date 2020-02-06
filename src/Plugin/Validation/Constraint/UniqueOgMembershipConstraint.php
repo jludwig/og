@@ -21,6 +21,6 @@ class UniqueOgMembershipConstraint extends Constraint {
    *
    * @var string
    */
-  public $NotUniqueMembership = 'The user %user is already a member in this group';
+  public $notUniqueMembership = 'The user %user is already a member in this group';
 
 }
