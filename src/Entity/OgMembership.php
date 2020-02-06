@@ -419,6 +419,7 @@ class OgMembership extends ContentEntityBase implements OgMembershipInterface {
         'settings' => [
           'match_operator' => 'CONTAINS',
           'size' => 60,
+          'match_limit' => 10,
           'placeholder' => '',
         ],
       ])
