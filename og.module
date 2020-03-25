@@ -194,7 +194,8 @@ function og_og_membership_access(OgMembershipInterface $entity, $operation, Acco
 
   // If there's a group owner, don't let them leave.
   if (
-    isset($group_fields['uid'])
+    $group instanceof EntityOwnerInterface
+    && $group->getOwnerId() === $entity->getOwnerId()
     && $operation === 'delete'
     && $group_fields['uid']->entity->id() === $entity->getOwner()->id()
   ) {
