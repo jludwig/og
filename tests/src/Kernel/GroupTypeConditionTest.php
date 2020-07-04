@@ -51,7 +51,7 @@ class GroupTypeConditionTest extends KernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     $this->conditionManager = $this->container->get('plugin.manager.condition');

@@ -53,7 +53,7 @@ class OgDeleteOrphansTest extends KernelTestBase {
   /**
    * {@inheritdoc}
    */
-  public function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     // Add membership and config schema.
