@@ -411,7 +411,7 @@ class OgMembership extends ContentEntityBase implements OgMembershipInterface {
     $fields['uid'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(new TranslatableMarkup('Username'))
       ->setDescription(new TranslatableMarkup('The user ID of the member.'))
-      ->setSetting('target_type', 'user');
+      ->setSetting('target_type', 'user')
       ->setSetting('handler', 'og:user')
       ->setConstraints(['UniqueOgMembership' => []])
       ->setDisplayOptions('form', [
