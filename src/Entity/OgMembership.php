@@ -440,7 +440,6 @@ class OgMembership extends ContentEntityBase implements OgMembershipInterface {
       ->setLabel(new TranslatableMarkup('Group entity ID'))
       ->setDescription(new TranslatableMarkup('The entity ID of the group.'));
 
-    $fields['state'] = BaseFieldDefinition::create('string')
     $fields['state'] = BaseFieldDefinition::create('list_string')
       ->setLabel(new TranslatableMarkup('State'))
       ->setDescription(new TranslatableMarkup('The user membership state: active, pending, or blocked.'))
