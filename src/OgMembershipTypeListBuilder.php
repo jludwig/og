@@ -16,7 +16,7 @@ class OgMembershipTypeListBuilder extends ConfigEntityListBuilder {
    * {@inheritdoc}
    */
   public function buildHeader() {
-    $header['title'] = t('Name');
+    $header['title'] = $this->t('Name');
     return $header + parent::buildHeader();
   }
 

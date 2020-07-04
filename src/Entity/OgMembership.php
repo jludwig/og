@@ -447,9 +447,9 @@ class OgMembership extends ContentEntityBase implements OgMembershipInterface {
       ->setDefaultValue(OgMembershipInterface::STATE_ACTIVE)
       ->setSettings([
         'allowed_values' => [
-          OgMembershipInterface::STATE_ACTIVE => t('Active'),
-          OgMembershipInterface::STATE_PENDING => t('Pending'),
-          OgMembershipInterface::STATE_BLOCKED => t('Blocked'),
+          OgMembershipInterface::STATE_ACTIVE => new TranslatableMarkup('Active'),
+          OgMembershipInterface::STATE_PENDING => new TranslatableMarkup('Pending'),
+          OgMembershipInterface::STATE_BLOCKED => new TranslatableMarkup('Blocked'),
         ],
       ])
       ->setDisplayOptions('form', [
