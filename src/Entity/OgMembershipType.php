@@ -31,7 +31,7 @@ use Drupal\og\OgMembershipTypeInterface;
  *     },
  *     "list_builder" = "Drupal\og\OgMembershipTypeListBuilder"
  *   },
- *   admin_permission = "administer group",
+ *   admin_permission = "administer organic groups",
  *   config_prefix = "og_membership_type",
  *   bundle_of = "og_membership",
  *   entity_keys = {

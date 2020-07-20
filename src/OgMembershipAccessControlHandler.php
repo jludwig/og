@@ -59,7 +59,7 @@ class OgMembershipAccessControlHandler extends EntityAccessControlHandler implem
     }
 
     // If the user has permission to administer all groups, allow access.
-    if ($account->hasPermission('administer group')) {
+    if ($account->hasPermission('administer organic groups')) {
       return AccessResult::allowed();
     }
 
@@ -125,7 +125,7 @@ class OgMembershipAccessControlHandler extends EntityAccessControlHandler implem
    */
   protected function checkCreateAccess(AccountInterface $account, array $context, $entity_bundle = NULL) {
     // If the user has permission to administer all groups, allow access.
-    if ($account->hasPermission('administer group')) {
+    if ($account->hasPermission('administer organic groups')) {
       return AccessResult::allowed();
     }
 
