@@ -63,7 +63,7 @@ class OgMembershipAccessControlHandler extends EntityAccessControlHandler implem
       return AccessResult::allowed();
     }
 
-    $permissions = [OgAccess::ADMINISTER_GROUP_PERMISSION, 'manager members'];
+    $permissions = [OgAccess::ADMINISTER_GROUP_PERMISSION, 'manage members'];
     foreach ($permissions as $permission) {
       $result = $this->ogAccess->userAccess($group, $permission, $account);
       if ($result->isAllowed()) {
@@ -140,7 +140,7 @@ class OgMembershipAccessControlHandler extends EntityAccessControlHandler implem
     $permissions = [
       OgAccess::ADMINISTER_GROUP_PERMISSION,
       'add user',
-      'manager members',
+      'manage members',
     ];
     foreach ($permissions as $permission) {
       $result = $this->ogAccess->userAccess($group, $permission, $account);
