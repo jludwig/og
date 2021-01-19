@@ -23,12 +23,12 @@ class UniqueOgMembershipConstraintValidator extends ConstraintValidator {
    * {@inheritdoc}
    */
   public function validate($value, Constraint $constraint) {
-    /* @var \Drupal\Core\Field\FieldItemInterface $value */
+    /** @var \Drupal\Core\Field\FieldItemInterface $value */
     if (!isset($value)) {
       return;
     }
 
-    /* @var \Drupal\og\Entity\OgMembership $entity */
+    /** @var \Drupal\og\Entity\OgMembership $entity */
     $entity = $value->getEntity();
 
     // Only applicable to new memberships.

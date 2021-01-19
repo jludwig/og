@@ -16,7 +16,7 @@ class ValidOgRoleConstraintValidator extends ConstraintValidator {
    * {@inheritdoc}
    */
   public function validate($value, Constraint $constraint) {
-    /* @var \Drupal\Core\Field\FieldItemInterface $value */
+    /** @var \Drupal\Core\Field\FieldItemInterface $value */
     if (!isset($value)) {
       return;
     }
