@@ -16,7 +16,7 @@ use Drupal\views\Views;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * OgAdminMembersController class.
+ * Displays the members administration page.
  */
 class OgAdminMembersController extends ControllerBase {
 
