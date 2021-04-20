@@ -175,7 +175,7 @@ field.widget.settings.og_autocomplete:
     # This already exists in field.widget.settings.entity_reference_autocomplete
     # in Drupal 8.8.x and is added here just to ensure backwards compatibility
     # with Drupal 8.7.x.
-    # @todo Remove this entry in https://github.com/Gizra/og/issues/581
+    # @todo: Remove this entry in https://github.com/Gizra/og/issues/581
     # @see https://github.com/Gizra/og/issues/581
     match_limit:
       type: integer
