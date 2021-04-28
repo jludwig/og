@@ -16,7 +16,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class OgMembershipTypeForm extends BundleEntityFormBase {
 
   /**
-   * The entity manager.
+   * The entity field manager.
    *
    * @var \Drupal\Core\Entity\EntityFieldManagerInterface
    */
@@ -26,7 +26,7 @@ class OgMembershipTypeForm extends BundleEntityFormBase {
    * Constructs the OgMembershipTypeForm object.
    *
    * @param \Drupal\Core\Entity\EntityFieldManagerInterface $entity_field_manager
-   *   The entity manager.
+   *   The entity field manager.
    */
   public function __construct(EntityFieldManagerInterface $entity_field_manager) {
     $this->entityFieldManager = $entity_field_manager;
