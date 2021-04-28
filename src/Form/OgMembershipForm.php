@@ -30,8 +30,8 @@ class OgMembershipForm extends ContentEntityForm {
   /**
    * Constructs a MessageForm object.
    *
-   * @param \Drupal\Core\Entity\EntityManagerInterface $entity_manager
-   *   The entity manager.
+   * @param \Drupal\Core\Entity\EntityRepositoryInterface $entity_repository
+   *   The entity repository.
    * @param \Drupal\Core\Entity\EntityTypeBundleInfoInterface $entity_type_bundle_info
    *   The entity type bundle service.
    * @param \Drupal\Component\Datetime\TimeInterface $time
