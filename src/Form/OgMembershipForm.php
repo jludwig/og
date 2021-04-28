@@ -6,7 +6,7 @@ namespace Drupal\og\Form;
 
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Entity\ContentEntityForm;
-use Drupal\Core\Entity\EntityManagerInterface;
+use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\og\OgAccessInterface;
@@ -39,8 +39,8 @@ class OgMembershipForm extends ContentEntityForm {
    * @param \Drupal\og\OgAccessInterface $og_access
    *   The OG access service.
    */
-  public function __construct(EntityManagerInterface $entity_manager, EntityTypeBundleInfoInterface $entity_type_bundle_info = NULL, TimeInterface $time = NULL, OgAccessInterface $og_access) {
-    parent::__construct($entity_manager, $entity_type_bundle_info, $time);
+  public function __construct(EntityRepositoryInterface $entity_repository, EntityTypeBundleInfoInterface $entity_type_bundle_info = NULL, TimeInterface $time = NULL, OgAccessInterface $og_access) {
+    parent::__construct($entity_repository, $entity_type_bundle_info, $time);
     $this->ogAccess = $og_access;
   }
 
@@ -49,7 +49,7 @@ class OgMembershipForm extends ContentEntityForm {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('entity.manager'),
+      $container->get('entity.repository'),
       $container->get('entity_type.bundle.info'),
       $container->get('datetime.time'),
       $container->get('og.access')
