@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace Drupal\og\Form;
 
 use Drupal\Core\Entity\BundleEntityFormBase;
-use Drupal\Core\Entity\EntityManagerInterface;
+use Drupal\Core\Entity\EntityFieldManagerInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -18,18 +18,18 @@ class OgMembershipTypeForm extends BundleEntityFormBase {
   /**
    * The entity manager.
    *
-   * @var \Drupal\Core\Entity\EntityManagerInterface
+   * @var \Drupal\Core\Entity\EntityFieldManagerInterface
    */
-  protected $entityManager;
+  protected $entityFieldManager;
 
   /**
    * Constructs the OgMembershipTypeForm object.
    *
-   * @param \Drupal\Core\Entity\EntityManagerInterface $entity_manager
+   * @param \Drupal\Core\Entity\EntityFieldManagerInterface $entity_field_manager
    *   The entity manager.
    */
-  public function __construct(EntityManagerInterface $entity_manager) {
-    $this->entityManager = $entity_manager;
+  public function __construct(EntityFieldManagerInterface $entity_field_manager) {
+    $this->entityFieldManager = $entity_field_manager;
   }
 
   /**
@@ -121,7 +121,7 @@ class OgMembershipTypeForm extends BundleEntityFormBase {
       $this->logger('og')->notice('Added membership type %name.', $context);
     }
 
-    $this->entityManager->clearCachedFieldDefinitions();
+    $this->entityFieldManager->clearCachedFieldDefinitions();
     $form_state->setRedirectUrl($type->urlInfo('collection'));
   }
 
