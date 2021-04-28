@@ -37,7 +37,7 @@ class OgMembershipTypeForm extends BundleEntityFormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('entity.manager')
+      $container->get('entity_field.manager')
     );
   }
 
