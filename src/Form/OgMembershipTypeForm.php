@@ -113,10 +113,10 @@ class OgMembershipTypeForm extends BundleEntityFormBase {
     $t_args = ['%name' => $type->label()];
 
     if ($status == SAVED_UPDATED) {
-      drupal_set_message($this->t('The membership type %name has been updated.', $t_args));
+      $this->messenger()->addMessage($this->t('The membership type %name has been updated.', $t_args));
     }
     elseif ($status == SAVED_NEW) {
-      drupal_set_message($this->t('The membership type %name has been added.', $t_args));
+      $this->messenger()->addMessage($this->t('The membership type %name has been added.', $t_args));
       $context = array_merge($t_args, ['link' => $type->toLink($this->t('View'), 'collection')]);
       $this->logger('og')->notice('Added membership type %name.', $context);
     }

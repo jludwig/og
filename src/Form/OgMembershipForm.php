@@ -123,12 +123,12 @@ class OgMembershipForm extends ContentEntityForm {
 
     if ($insert) {
       $this->logger('og')->notice('OG Membership: added the @membership_type membership for the use uid @uid to the group of the entity-type @group_type and ID @gid.', $context);
-      drupal_set_message($this->t('Added %user to %group.', $t_args));
+      $this->messenger()->addMessage($this->t('Added %user to %group.', $t_args));
       return;
     }
 
     $this->logger('og')->notice('OG Membership: updated the @membership_type membership for the use uid @uid to the group of the entity-type @group_type and ID @gid.', $context);
-    drupal_set_message($this->t('Updated the membership for %user to %group.', $t_args));
+    $this->messenger()->addMessage($this->t('Updated the membership for %user to %group.', $t_args));
   }
 
 }
