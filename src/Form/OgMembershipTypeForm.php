@@ -117,7 +117,7 @@ class OgMembershipTypeForm extends BundleEntityFormBase {
     }
     elseif ($status == SAVED_NEW) {
       $this->messenger()->addMessage($this->t('The membership type %name has been added.', $t_args));
-      $context = array_merge($t_args, ['link' => $type->toLink($this->t('View'), 'collection')]);
+      $context = array_merge($t_args, ['link' => $type->toLink($this->t('View'), 'collection')->toString()]);
       $this->logger('og')->notice('Added membership type %name.', $context);
     }
 
