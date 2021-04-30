@@ -106,7 +106,7 @@ class OgMembershipForm extends ContentEntityForm {
     $insert = $membership->isNew();
     $membership->save();
 
-    $membership_link = $membership->link($this->t('View'));
+    $membership_link = $membership->toLink($this->t('View'));
 
     $context = [
       '@membership_type' => $membership->getType(),
@@ -117,8 +117,8 @@ class OgMembershipForm extends ContentEntityForm {
     ];
 
     $t_args = [
-      '%user' => $membership->getOwner()->link(),
-      '%group' => $membership->getGroup()->link(),
+      '%user' => $membership->getOwner()->toLink(),
+      '%group' => $membership->getGroup()->toLink(),
     ];
 
     if ($insert) {
